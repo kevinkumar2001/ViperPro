@@ -5,7 +5,10 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_ROOT_PASSWORD: rolex
+      MYSQL_DATABASE: test
+      MYSQL_USER: rolex
+      MYSQL_PASSWORD: rolex
     networks:
       - mysql-network
 
@@ -14,6 +17,8 @@ services:
     restart: always
     environment:
       PMA_HOST: db
+      PMA_USER: rolex
+      PMA_PASSWORD: rolex
     ports:
       - "8080:80"
     networks:
@@ -22,4 +27,3 @@ services:
 networks:
   mysql-network:
     driver: bridge
-￼Enter
